@@ -1,10 +1,17 @@
+
+
+
 body {
+  --pinkHover: rgb(251, 102, 2);
+  --blueHover: #e5ebf1;
+  --mainCol: rgb(23, 161, 241);
+  background-color: #e5ebf1;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  
 }
 
 code {
@@ -14,5 +21,6 @@ code {
 
 
 *{
+  font-family: 'Noto Serif', serif;
   box-sizing: border-box;
 }

@@ -1,0 +1,35 @@
+.vue-controll {
+  display: flex;
+  gap: 20px;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 800;
+}
+
+.vue-button {
+  display: flex;
+  width: 33px;
+  height: 33px;
+  border-radius: 5px;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  transition: all 0.2s linear;
+}
+.vue-button-active {
+  color: var(--pinkHover);
+  background-color: var(--blueHover);
+}
+.vue-button:hover {
+  color: var(--pinkHover);
+  background-color: var(--blueHover);
+}
