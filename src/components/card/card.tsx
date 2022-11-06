@@ -1,5 +1,6 @@
 import './card.scss'
 import cn from 'classnames'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faThumbsUp, faHeartCrack, faCompress} from '@fortawesome/free-solid-svg-icons' 
 interface ICard {
@@ -8,11 +9,12 @@ interface ICard {
     label: string,
     like: boolean,
     dislike: boolean,
-    vue: 0 | 1
+    vue: 0 | 1,
+    id:number
 }
 
 
-function Card({image, title, label, like, dislike, vue}:ICard) {
+function Card({image, title, label, like, dislike, vue, id}:ICard) {
   const clazz = vue === 0 ? 'cardMini' : 'card'
 
   return (
@@ -31,7 +33,10 @@ function Card({image, title, label, like, dislike, vue}:ICard) {
           <div className={cn('raiting', {'raiting-active': dislike})}><FontAwesomeIcon icon={faHeartCrack} /></div>
 
         </div>
-        <button className='card-button'>Open</button>
+        <Link className='card-button' to={`/full${id}`}>
+          Open
+        </Link>
+        
     </div>
   )
 }

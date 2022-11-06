@@ -1,22 +1,13 @@
-import Card from './components/card/card';
+import Main from './page/main/main';
 import VueControll from './components/vueControll/vueControll';
+import Menu from './components/menu/menu';
 import { useState } from 'react';
-import Create from './page/create';
+import Create from './page/create/create';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import FullPage from './page/fullPage/fullPage';
 
-const data = [{
-  image: 'https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/11/how-to-write-a-blog-post.jpeg',
-  title: 'Hello first blog',
-  label: 'My name is arbi. I was born in 1997 in grozny. Grozny was wery dangerous place on that moment',
-  like: true,
-  dislike: false
-},{
-  image: 'https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-and-stars-shine_107791-7397.jpg?w=2000',
-  title: 'Hello first blog',
-  label: 'My name is arbi. I was born in 1997 in grozny. Grozny was wery dangerous place on that moment',
-  like: false,
-  dislike: true
-}]
+
 
 
 
@@ -24,13 +15,16 @@ function App() {
   const [vue, setVue] = useState<0 | 1>(0)
 
   return (
+    
    <div className='App'>
-    <VueControll vue={vue} setVue={setVue} />
-    {data.map((item, i) =>{
-      return <Card vue={vue} image={item.image} like={item.like} dislike={item.dislike} title={item.title} label={item.label} />
-    })}
-    {/* <Create /> */}
+    <Menu><VueControll vue={vue} setVue={setVue} /></Menu>
+    <Routes>
+    <Route path={`/full:id`} element={<FullPage/>}/>
+    <Route path='/'  element={<Main vue={vue} />}/>
+    <Route path='/create' element={<Create />} />
+    </Routes>
    </div>
+   
   );
 }
 

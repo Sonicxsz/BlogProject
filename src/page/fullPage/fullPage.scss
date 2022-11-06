@@ -1,0 +1,27 @@
+.full {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas:
+    ". h1 ."
+    ". img ."
+    ". title .";
+}
+
+.full-img {
+  grid-area: img;
+  height: 600px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+.full-h1 {
+  display: flex;
+  grid-area: h1;
+  justify-content: center;
+}
+
+.full-title {
+  grid-area: title;
+}

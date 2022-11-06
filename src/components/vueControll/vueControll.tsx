@@ -12,11 +12,15 @@ function VueControll({setVue,vue}:IVue) {
 
 
   return (
-   <div className='flex'>
+   <div className='vue-flex'>
     Vue Model
      <div className='vue-controll'>
-        <div onClick={() => setVue(0)} className={cn("vue-button", {'vue-button-active': vue === 0 })}><FontAwesomeIcon icon={faBars}/></div>
-        <div onClick={() => setVue(1)} className={cn("vue-button", {'vue-button-active': vue === 1 })}><FontAwesomeIcon icon={faSquare}/></div>
+        <div onClick={(e) => {
+          e.stopPropagation()
+          setVue(0)}} className={cn("vue-button", {'vue-button-active': vue === 0 })}><FontAwesomeIcon icon={faBars}/></div>
+        <div onClick={(e) => {
+          e.stopPropagation()
+          setVue(1)}} className={cn("vue-button", {'vue-button-active': vue === 1 })}><FontAwesomeIcon icon={faSquare}/></div>
     </div>
    </div>
   )

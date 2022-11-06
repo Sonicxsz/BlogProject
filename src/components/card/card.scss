@@ -85,7 +85,7 @@
   opacity: 0;
   top: 0;
   left: 0;
-  font-size: 100px;
+  font-size: 90px;
   position: absolute;
   z-index: 99;
   transition: 0.1s all linear;
@@ -113,6 +113,9 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s linear;
+  text-decoration: none;
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
 
 .card-button:hover {
