@@ -41,7 +41,7 @@ function Main({vue}:IMain ) {
   return (
     <>
     {data.map((item, i) =>{
-      return <Card vue={vue} id={item.id} image={item.image} like={item.like} dislike={item.dislike} title={item.title} label={item.label} />
+      return <Card vue={vue} key={item.id} id={item.id} image={item.image} like={item.like} dislike={item.dislike} title={item.title} label={item.label} />
     })}
     </>
   )

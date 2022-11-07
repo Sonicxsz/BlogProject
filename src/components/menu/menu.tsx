@@ -1,14 +1,24 @@
 import './menu.scss'
-import {useState} from 'react'
+import {useState, useRef, useEffect, useReducer, useCallback} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGears} from '@fortawesome/free-solid-svg-icons' 
 import { Link } from "react-router-dom";
+import useOutSideClick from '../../hooks/useOutSideClick';
 interface IMenu{
     children:React.ReactNode
 }
 
+
+
 function Menu({children}:IMenu) {
     const [show, setShow] = useState(false)
+    const tooltipRef = useRef<HTMLDivElement | null>(null)
+    
+    const onClose = useCallback(() =>{
+        setShow(false)
+    },[])
+
+    useOutSideClick(tooltipRef, onClose, true)
   return (
     <div className='menu'>
         <div className='firstWrapper'>
@@ -21,7 +31,7 @@ function Menu({children}:IMenu) {
             </Link>
         </div>
         <div className='firstWrapper'>
-        <div onClick={() => setShow(!show)} className='menu-li menu-settings'>
+        <div ref={tooltipRef} onClick={() => setShow(!show)} className='menu-li menu-settings'>
             <FontAwesomeIcon icon={faGears}/>
             {show && <div className='settings'>{children}</div>}
         </div>

@@ -10,7 +10,7 @@ function Create() {
   const [preview, setPreview] = useState<string | null>()
   const [value, setValue] = useState('')
   const [height, setHeight] = useState<number>(47)
-
+  console.log(image)
   useEffect(() =>{
     if(image){
       const reader = new FileReader()
